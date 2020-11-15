@@ -39,7 +39,7 @@ export default class PersonnagesPage extends Component {
     this.setState({
       searchName: name,
     });
-    console.log('name', name);
+    //console.log('name', name);
   };
 
   handleCallAPIPerso = name => {
@@ -48,7 +48,7 @@ export default class PersonnagesPage extends Component {
       .then(response => response.json())
       .then(json => {
         const data = json;
-        console.log('data', data.data.results);
+        //console.log('data', data.data.results);
         this.setState({ persos: data.data.results });
       });
   };
@@ -66,7 +66,7 @@ export default class PersonnagesPage extends Component {
     this.setState({
       checked: c,
     });
-    console.log('name', c);
+    //console.log('name', c);
   };
 
   render() {
@@ -93,8 +93,7 @@ export default class PersonnagesPage extends Component {
           Primary
         </Button>
         <Checkbox onChange={this.handleCheck} />
-        <CardPerso perso={this.state.persos[0]} />
-        <TablePerso persos={this.state.persos} />
+        <TablePerso  persos={this.state.persos}/>
       </div>
     );
   }

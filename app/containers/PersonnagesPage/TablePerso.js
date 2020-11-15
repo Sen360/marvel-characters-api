@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { NavLink } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -19,23 +20,11 @@ const styles = theme => ({
   },
 });
 
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-  id += 1;
-  return { id, name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 function SimpleTable(props) {
   const { classes, persos } = props;
-  console.log('persos', persos);
+  console.log("SimpleTable",props.persos )
 
   return (
     <Paper className={classes.root}>
@@ -53,12 +42,15 @@ function SimpleTable(props) {
           {persos.map(row => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.id}
+              <NavLink to={'/persobyid/'+row.id}>
+                 {row.id}
+              </NavLink>
+                
               </TableCell>
               <TableCell align="right">{row.name}</TableCell>
               <TableCell align="right">{row.description}</TableCell>
               <TableCell align="right">{row.modified}</TableCell>
-              <TableCell align="right">{row.available}</TableCell>
+              <TableCell align="right">{row.comics.available}</TableCell>
             </TableRow>
           ))}
         </TableBody>
