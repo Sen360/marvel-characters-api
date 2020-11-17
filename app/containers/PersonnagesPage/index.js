@@ -36,7 +36,7 @@ export default class PersonnagesPage extends React.Component {
   }
 
   handleChange = event => {
-    const name = event.target.checked;
+    const name = event.target.value;
     this.setState({
       searchName: name,
     });
