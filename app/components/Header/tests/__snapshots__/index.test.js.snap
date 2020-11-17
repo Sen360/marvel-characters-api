@@ -16,6 +16,25 @@ exports[`<Header /> should render a div 1`] = `
     class="NavBar-sc-3b48xb-0 ioQxlc"
   >
     <a
+      href="/search"
+      style="text-decoration: none;"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Search
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+    <a
       class="HeaderLink-sc-1mtyaiv-0 hMiTYG"
       href="/"
     >

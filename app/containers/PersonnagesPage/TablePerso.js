@@ -20,12 +20,8 @@ const styles = theme => ({
   },
 });
 
-
-
 function SimpleTable(props) {
   const { classes, persos } = props;
-  console.log("SimpleTable",props.persos )
-
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -42,10 +38,8 @@ function SimpleTable(props) {
           {persos.map(row => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-              <NavLink to={'/persobyid/'+row.id}>
-                 {row.id}
-              </NavLink>
-                
+                {/* eslint-disable-next-line */}
+                <NavLink to={`/persobyid/${row.id}`}>{row.id}</NavLink> 
               </TableCell>
               <TableCell align="right">{row.name}</TableCell>
               <TableCell align="right">{row.description}</TableCell>
@@ -61,6 +55,7 @@ function SimpleTable(props) {
 
 SimpleTable.propTypes = {
   classes: PropTypes.object.isRequired,
+  persos: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(SimpleTable);
