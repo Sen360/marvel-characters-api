@@ -25,7 +25,7 @@ export default class PersonnagesPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchName: 'an',
+      searchName: 'a',
       persos: [],
       checked: false,
     };
